@@ -33,11 +33,14 @@ interface State {
   loading: boolean;
 }
 
+//Interfaces in TS are used to describe an object (ie. {name: 'Izzy', age: '33} - {name: string; age: number;})
 interface StoreContextType {
   state: State;
   setState: Dispatch<SetStateAction<State>>;
 }
 
+// The createContext taikes an initial value, but you must describe the initial value/argument and what the contecxt object will look like later 
+//So, storeContextType describes the object that I'm passing in on like 67 through the value prop
 const StoreContext = createContext<StoreContextType | undefined>(undefined);
 
 const initialState: State = {
