@@ -1,0 +1,27 @@
+{
+  "name": "recipe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "client:install": "cd ./client && npm i",
+    "client:dev": "cd ./client && npm run dev",
+    "server:install": "cd ./server && npm i",
+    "server:dev": "cd ./server && npm run dev",
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "seed": "cd ./server && npm run seed",
+    "start": "node ./server/dist/server.js",
+    "install:all": "npm i && concurrently \"npm i\" \"npm run client:install\" \"npm run server:install\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  },
+  "dependencies": {
+    "pg": "^8.13.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.5"
+  }
+}
